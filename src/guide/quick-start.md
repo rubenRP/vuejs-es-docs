@@ -2,11 +2,11 @@
 footer: false
 ---
 
-# Quick Start
+# Inicio Rápido
 
 Depending on your use case and preference, you can use Vue with or without a build step.
 
-## With Build Tools
+## Con Herramientas de Construcción
 
 A build setup allows us to use Vue [Single-File Components](/guide/scaling-up/sfc) (SFCs). The official Vue build setup is based on [Vite](https://vitejs.dev), a frontend build tool that is modern, lightweight and extremely fast.
 
@@ -62,9 +62,9 @@ When you are ready to ship your app to production, run the following:
 
 This will create a production-ready build of your app in the project's `./dist` directory. Check out the [Production Deployment Guide](/guide/best-practices/production-deployment.html) to learn more about shipping your app to production.
 
-[Next Steps >](#next-steps)
+[Próximos Pasos >](#next-steps)
 
-## Without Build Tools
+## Sin Herramientas de Construcción
 
 To get started with Vue without a build step, simply copy the following code into an HTML file and open it in your browser:
 
@@ -148,7 +148,7 @@ In order for this to work, you need to serve your HTML over the `http://` protoc
 
 You may have noticed that the imported component's template is inlined as a JavaScript string. If you are using VSCode, you can install the [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) extension and prefix the strings with a `/*html*/` comment to get syntax highlighting for them.
 
-## Next Steps
+## Próximos Pasos
 
 If you skipped the [Introduction](/guide/introduction), we strongly recommend reading it before moving on to the rest of the documentation.
 
