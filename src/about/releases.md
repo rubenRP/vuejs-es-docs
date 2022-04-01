@@ -13,7 +13,7 @@ onMounted(async () => {
 })
 </script>
 
-# Releases
+# Lanzamientos
 
 <p v-if="version">
 La última versión estable actual de Vue es <strong>{{ version }}</strong>.
