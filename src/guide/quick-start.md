@@ -150,7 +150,7 @@ Es posible que hayas notado que la template del componente importado está integ
 
 ## Próximos Pasos
 
-Si te saltaste la [Introducción](/guía/introducción), te recomendamos encarecidamente que la leas antes de pasar al resto de la documentación.
+Si te saltaste la [Introducción](/guide/introduction), te recomendamos encarecidamente que la leas antes de pasar al resto de la documentación.
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/guide/essentials/application.html">
