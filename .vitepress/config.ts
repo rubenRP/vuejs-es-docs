@@ -334,7 +334,7 @@ export const sidebar = {
           link: '/guide/best-practices/production-deployment'
         },
         {
-          text: 'Performance',
+          text: 'Guía de Optimización del Rendimiento',
           link: '/guide/best-practices/performance'
         },
         {
