@@ -26,7 +26,7 @@ Estas reglas ayudan a prevenir errores; apréndelas y apégate a ellas a toda co
 
 Se ha encontrado que estas reglas mejoran la legibilidad y/o la experiencia del desarrollador en la mayoría de los proyectos. Tu código se ejecutará aún si no las respetas, pero las violaciones deberían ser raras y estar bien justificadas.
 
-- [Ver todas las reglas de Prioridad B](./rules-strong-recommended)
+- [Ver todas las reglas de Prioridad B](./rules-strongly-recommended)
 
 ### Prioridad C: Recomendado
 
