@@ -657,11 +657,11 @@ export const sidebar = {
           link: '/style-guide/'
         },
         {
-          text: 'A - Esenciales',
+          text: 'A - Esencial',
           link: '/style-guide/rules-essential'
         },
         {
-          text: 'B - Fuertemente Recomendado',
+          text: 'B - Muy Recomendado',
           link: '/style-guide/rules-strongly-recommended'
         },
         {

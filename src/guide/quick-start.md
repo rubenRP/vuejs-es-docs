@@ -6,7 +6,7 @@ footer: false
 
 Según tu caso de uso y preferencias, puedes usar Vue con o sin un paso de compilación.
 
-## Con Herramientas de Construcción
+## Con Herramientas de Empaquetado
 
 Una configuración de desarrollo nos permite usar los [Componentes de un Solo Archivo](/guide/scaling-up/sfc) (SFC) de Vue. La configuración de desarrollo oficial de Vue se basa en [Vite](https://vitejs.dev), una herramienta de compilación frontend que es moderna, ligera y extremadamente rápida.
 
@@ -64,7 +64,7 @@ Esto creará una compilación de tu aplicación lista para producción en el dir
 
 [Próximos Pasos >](#next-steps)
 
-## Sin Herramientas de Construcción
+## Sin Herramientas de Empaquetado
 
 Para comenzar con Vue sin un paso de compilación, simplemente copia el siguiente código en un archivo HTML y ábrelo en tu navegador:
 

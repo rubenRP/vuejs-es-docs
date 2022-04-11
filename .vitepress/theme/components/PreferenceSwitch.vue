@@ -74,7 +74,7 @@ function useToggleFn(
     <div id="preference-switches" :hidden="!isOpen" :aria-hidden="!isOpen">
       <div class="switch-container">
         <label class="options-label" @click="toggleCompositionAPI(false)"
-          >Opciones</label
+          >Options</label
         >
         <VTSwitch
           class="api-switch"
@@ -85,7 +85,7 @@ function useToggleFn(
         <label
           class="composition-label"
           @click="toggleCompositionAPI(true)"
-          >Composición</label
+          >Composition</label
         >
         <a
           class="switch-link"
@@ -190,7 +190,7 @@ function useToggleFn(
 }
 
 .switch-link {
-  margin-left: 5px;
+  margin-left: 8px;
   font-size: 11px;
   min-width: 14px;
   height: 14px;

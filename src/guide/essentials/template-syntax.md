@@ -1,84 +1,84 @@
 # Sintaxis de la Template
 
-Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying component instance's data. All Vue templates are syntactically valid HTML that can be parsed by spec-compliant browsers and HTML parsers.
+Vue utiliza una sintaxis de template basada en HTML que te permite vincular declarativamente el renderizado del DOM con los datos de la instancia del componente subyacente. Todas las templates de Vue son HTML sintácticamente válido que pueden ser analizados por navegadores y por analizadores de HTML que cumplan las especificaciones.
 
-Under the hood, Vue compiles the templates into highly-optimized JavaScript code. Combined with the reactivity system, Vue is able to intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.
+Entre bastidores, Vue compila las templates en código JavaScript altamente optimizado. Combinado con el sistema de reactividad, Vue es capaz de descifrar de manera inteligente la cantidad mínima de componentes a re-renderizar y aplicar la cantidad mínima de manipulaciones al DOM cuando cambia el estado de la aplicación.
 
-If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](/guide/extras/render-function.html) instead of templates, with optional JSX support. However, do note that they do not enjoy the same level of compile-time optimizations as templates.
+Si estás familiarizado con los conceptos de Virtual DOM y prefieres la potencia bruta de JavaScript, también puedes [escribir directamente funciones de renderizado](/guide/extras/render-function.html) en lugar de templates, con soporte opcional para JSX. Sin embargo, ten en cuenta que no disfrutarás el mismo nivel de optimizaciones en tiempo de compilación como con las plantillas.
 
-## Text Interpolation
+## Interpolación de Texto
 
-The most basic form of data binding is text interpolation using the "Mustache" syntax (double curly braces):
+La forma más básica de vinculación de datos es la interpolación de texto utilizando la sintaxis de "Mustache" o bigotes (dobles llaves):
 
 ```vue-html
-<span>Message: {{ msg }}</span>
+<span>Mensaje: {{ msg }}</span>
 ```
 
-The mustache tag will be replaced with the value of the `msg` property from the corresponding component instance. It will also be updated whenever the `msg` property changes.
+La etiqueta del mustache se reemplazará con el valor de la propiedad `msg` de la instancia del componente correspondiente. También se actualizará cada vez que cambie la propiedad `msg`.
 
-## Raw HTML
+## HTML Puro
 
-The double mustaches interprets the data as plain text, not HTML. In order to output real HTML, you will need to use the [`v-html` directive](/api/built-in-directives.html#v-html):
+Los dobles mustaches interpretan los datos como texto sin formato, no como HTML. Para generar HTML real, necesitarás usar la [directiva `v-html`](/api/built-in-directives.html#v-html):
 
 ```vue-html
-<p>Using text interpolation: {{ rawHtml }}</p>
-<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+<p>Usando interpolación de texto: {{ rawHtml }}</p>
+<p>Usando la directiva v-html: <span v-html="rawHtml"></span></p>
 ```
 
 <script setup>
-  const rawHtml = '<span style="color: red">This should be red.</span>'
+  const rawHtml = '<span style="color: red">Esto debería ser rojo.</span>'
 </script>
 
 <div class="demo">
-  <p>Using text interpolation: {{ rawHtml }}</p>
-  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+  <p>Usando interpolación de texto: {{ rawHtml }}</p>
+  <p>Usando la directiva v-html: <span v-html="rawHtml"></span></p>
 </div>
 
-Here we're encountering something new. The `v-html` attribute you're seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, we're basically saying "keep this element's inner HTML up-to-date with the `rawHtml` property on the current active instance."
+Aquí nos encontramos con algo nuevo. El atributo `v-html` que estás viendo se llama **directiva**. Las directivas tienen el prefijo `v-` para indicar que son atributos especiales proporcionados por Vue y, como habrás adivinado, aplican un comportamiento reactivo especial al DOM renderizado. Básicamente estamos diciendo "manten actualizado el HTML interno de este elemento con la propiedad `rawHtml` en la instancia activa actual".
 
-The contents of the `span` will be replaced with the value of the `rawHtml` property, interpreted as plain HTML - data bindings are ignored. Note that you cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine. Instead, components are preferred as the fundamental unit for UI reuse and composition.
+El contenido de `span` se reemplazará con el valor de la propiedad `rawHtml`, interpretado como HTML sin formato: los datos vinculados se ignoran. Ten en cuenta que no puedes usar `v-html` para componer templates parciales, porque Vue no es un motor de templates basado en cadenas. En su lugar, se prefieren los componentes como unidad fundamental para la reutilización y composición de la interfaz de usuario.
 
-:::warning Security Warning
-Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS vulnerabilities](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.
+:::warning Advertencia de seguridad
+El HTML arbitrario renderizado dinámicamente en tu sitio web puede ser muy peligroso porque puede conducir fácilmente a [vulnerabilidades XSS](https://es.wikipedia.org/wiki/Cross-site_scripting). Utiliza `v-html` solo en contenido confiable y **nunca** en contenido proporcionado por el usuario.
 :::
 
-## Attribute Bindings
+## Enlaces de Atributos
 
-Mustaches cannot be used inside HTML attributes. Instead, use a [`v-bind` directive](/api/built-in-directives.html#v-bind):
+Los mustaches no se pueden usar dentro de los atributos HTML. En su lugar, utiliza una directiva [`v-bind`](/api/built-in-directives.html#v-bind):
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
 ```
 
-The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
+La directiva `v-bind` le indica a Vue que mantenga el atributo `id` del elemento sincronizado con la propiedad `dynamicId` del componente. Si el valor vinculado es `null` o `undefined`, el atributo se eliminará del elemento renderizado.
 
-### Shorthand
+### Abreviatura
 
-Because `v-bind` is so commonly used, it has a dedicated shorthand syntax:
+Debido a que `v-bind` se usa con tanta frecuencia, tiene una sintaxis abreviada dedicada:
 
 ```vue-html
 <div :id="dynamicId"></div>
 ```
 
-Attributes that start with `:` may look a bit different from normal HTML, but it is in fact a valid character for attribute names and all Vue-supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is optional, but you will likely appreciate it when you learn more about its usage later.
+Los atributos que comienzan con `:` pueden verse un poco diferentes del HTML normal, pero de hecho es un carácter válido para los nombres de atributos y todos los navegadores compatibles con Vue pueden analizarlo correctamente. Además, no aparecen en el renderizado final. La sintaxis abreviada es opcional, pero probablemente la apreciarás cuando aprendas más sobre su uso más adelante.
 
-> For the rest of the guide, we will be using the shorthand syntax in code examples, as that's the most common usage for Vue developers.
+> Para el resto de la guía, usaremos la sintaxis abreviada en los ejemplos de código, ya que es la más comúnmente usada para los desarrolladores de Vue.
 
-### Boolean Attributes
+### Atributos Booleanos
 
-[Boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) are attributes that can indicate true / false values by its presence on an element. For example, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) is one of the most commonly used boolean attributes.
+Los [atributos booleanos](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) son atributos que pueden indicar valores verdadero/falso por su presencia en un elemento. Por ejemplo, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) es uno de los atributos booleanos más comúnmente utilizados.
 
-`v-bind` works a bit differently in this case:
+`v-bind` funciona un poco diferente en este caso:
 
 ```vue-html
 <button :disabled="isButtonDisabled">Button</button>
 ```
 
-The `disabled` attribute will be included if `isButtonDisabled` has a [truthy value](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). It will also be included if the value is an empty string, maintaining consistency with `<button disabled="">`. For other falsy values the attribute will be omitted.
+El atributo `disabled` se incluirá si `isButtonDisabled` tiene un [valor verdadero (thruty)](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). También se incluirá si el valor es una cadena vacía, manteniendo la coherencia con `<button disabled="">`. Para otros valores falsos, se omitirá el atributo.
 
-### Dynamically Binding Multiple Attributes
+### Vinculación Dinámica de Múltiples Atributos
 
-If you have a JavaScript object representing multiple attributes that looks like this:
+Si tienes un objeto de JavaScript representando múltiples atributos que se ve así:
 
 <div class="composition-api">
 
@@ -105,13 +105,13 @@ data() {
 
 </div>
 
-You can bind them to a single element by using `v-bind` without an argument:
+Puedes vincularlos a un único elemento usando `v-bind` sin un argumento:
 
 ```vue-html
 <div v-bind="objectOfAttrs"></div>
 ```
 
-## Using JavaScript Expressions
+## Usando Expresiones JavaScript
 
 So far we've only been binding to simple property keys in our templates. But Vue actually supports the full power of JavaScript expressions inside all data bindings:
 
@@ -164,7 +164,7 @@ Template expressions are sandboxed and only have access to a [restricted list of
 
 Globals not explicitly included in the list, for example user-attached properties on `window`, will not be accessible in template expressions. You can, however, explicitly define additional globals for all Vue expressions by adding them to [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
-## Directives
+## Directivas
 
 Directives are special attributes with the `v-` prefix. Vue provides a number of [built-in directives](/api/built-in-directives.html), including `v-html` and `v-bind` which we have introduced above.
 
