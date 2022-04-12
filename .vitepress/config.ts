@@ -42,7 +42,7 @@ const nav = [
     link: '/api/'
   },
   {
-    text: 'Patio de Juego',
+    text: 'Zona de Práctica',
     link: 'https://sfc.vuejs.org'
   },
   {
