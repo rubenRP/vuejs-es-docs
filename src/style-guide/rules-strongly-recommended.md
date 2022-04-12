@@ -76,28 +76,28 @@ components/
 
 </div>
 
-## Base component names
+## Nombres de los componentes base
 
-**Base components (a.k.a. presentational, dumb, or pure components) that apply app-specific styling and conventions should all begin with a specific prefix, such as `Base`, `App`, or `V`.**
+**Los componentes base (también conocidos como componentes de presentación, "silentes"" o puros) que aplican estilos y convenciones específicos de la aplicación deben comenzar todos con un prefijo específico, como `Base`, `App` o `V`.**
 
-::: details Detailed Explanation
-These components lay the foundation for consistent styling and behavior in your application. They may **only** contain:
+::: details Explicación detallada
+Estos componentes sientan las bases para un estilo y un comportamiento consistentes en tu aplicación. Pueden contener **solo**:
 
-- HTML elements,
-- other base components, and
-- 3rd-party UI components.
+- Elementos HTML,
+- Otros componentes base, y
+- Componentes de UI de terceros.
 
-But they'll **never** contain global state (e.g. from a [Pinia](https://pinia.vuejs.org/) store).
+Pero **nunca** contendrán un estado global (por ejemplo, de una store de Vue como [Pinia](https://pinia.vuejs.org/)).
 
-Their names often include the name of an element they wrap (e.g. `BaseButton`, `BaseTable`), unless no element exists for their specific purpose (e.g. `BaseIcon`). If you build similar components for a more specific context, they will almost always consume these components (e.g. `BaseButton` may be used in `ButtonSubmit`).
+Sus nombres a menudo incluyen el nombre del elemento que envuelven (por ejemplo, `BaseButton`, `BaseTable`), a menos que no exista ningún elemento para tu propósito específico (por ejemplo, `BaseIcon`). Si creas componentes similares para un contexto más específico, casi siempre consumirán esos componentes (por ejemplo, `BaseButton` se puede usar en `ButtonSubmit`).
 
-Some advantages of this convention:
+Algunas ventajas de esta convención:
 
-- When organized alphabetically in editors, your app's base components are all listed together, making them easier to identify.
+- Cuando se organizan alfabéticamente en los editores, los componentes básicos de tu aplicación se enumeran juntos, lo que los hace más fáciles de identificar.
 
-- Since component names should always be multi-word, this convention prevents you from having to choose an arbitrary prefix for simple component wrappers (e.g. `MyButton`, `VueButton`).
+- Dado que los nombres de los componentes siempre deben tener varias palabras, esta convención evita que tengas que elegir un prefijo arbitrario para paquetes de componentes simples (por ejemplo, `MyButton`, `VueButton`).
 
-- Since these components are so frequently used, you may want to simply make them global instead of importing them everywhere. A prefix makes this possible with Webpack:
+- Dado que estos componentes se usan con tanta frecuencia, es posible que desees simplemente hacerlos globales en lugar de importarlos en todas partes. Un prefijo hace esto posible usando Webpack:
 
   ```js
   const requireComponent = require.context(
@@ -156,11 +156,11 @@ components/
 
 </div>
 
-## Single-instance component names
+## Nombres de componentes de instancia única
 
-**Components that should only ever have a single active instance should begin with the `The` prefix, to denote that there can be only one.**
+**Los componentes que solo deben tener una única instancia activa deben comenzar con el prefijo `The`, para indicar que solo puede haber uno.**
 
-This does not mean the component is only used in a single page, but it will only be used once _per page_. These components never accept any props, since they are specific to your app, not their context within your app. If you find the need to add props, it's a good indication that this is actually a reusable component that is only used once per page _for now_.
+Esto no significa que el componente solo se use en una sola página, sino que solo se usará una vez _por página_. Estos componentes no aceptan props, ya que son específicos para tu aplicación, no del contexto de la misma. Si encuentras la necesidad de agregar props, es buen indicio de que este es en realidad un componente reutilizable que solo se usa una vez por página _por ahora_.
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>
@@ -184,14 +184,14 @@ components/
 
 </div>
 
-## Tightly coupled component names
+## Nombres de componentes fuertemente acoplados
 
-**Child components that are tightly coupled with their parent should include the parent component name as a prefix.**
+**Los componentes hijos que están fuertemente acoplados con su padre deben incluir el nombre del componente padre como prefijo.**
 
-If a component only makes sense in the context of a single parent component, that relationship should be evident in its name. Since editors typically organize files alphabetically, this also keeps these related files next to each other.
+Si un componente solo tiene sentido en el contexto de un único componente padre, dicha relación debe ser evidente en su nombre. Dado que usualmente los editores organizar los archivos alfabéticamente, esto también mantiene a estos archivos relacionados cercanos visualmente.
 
-::: details Detailed Explanation
-You might be tempted to solve this problem by nesting child components in directories named after their parent. For example:
+::: details Explicación detallada
+Puede que tengas la tentación de resolver este problema anidando componentes hijos en directorios nombrados como su componente padre. Por ejemplo:
 
 ```
 components/
@@ -202,7 +202,7 @@ components/
    |- index.vue
 ```
 
-or:
+o:
 
 ```
 components/
@@ -213,10 +213,10 @@ components/
 |- TodoList.vue
 ```
 
-This isn't recommended, as it results in:
+Esto no es recomendado ya que da como resultado:
 
-- Many files with similar names, making rapid file switching in code editors more difficult.
-- Many nested sub-directories, which increases the time it takes to browse components in an editor's sidebar.
+- Muchos archivos con nombres similares, haciendo difícil el cambio rápido entre archivos en los editores de código.
+- Muchos subdirectorios anidados, lo que aumenta el tiempo que lleva buscar componentes en la barra lateral de un editor.
   :::
 
 <div class="style-example style-example-bad">
@@ -255,24 +255,24 @@ components/
 
 </div>
 
-## Order of words in component names
+## Orden de las palabras en los nombres de los componentes
 
-**Component names should start with the highest-level (often most general) words and end with descriptive modifying words.**
+**Los nombres de los componentes deben comenzar con las palabras del nivel más alto (a menudo el más general) y terminar con palabras descriptivas.**
 
-::: details Detailed Explanation
-You may be wondering:
+::: details Explicación detallada
+Te estarás preguntando:
 
-> "Why would we force component names to use less natural language?"
+> "¿Por qué forzar un lenguaje poco natural al nombrar componentes?"
 
-In natural English, adjectives and other descriptors do typically appear before the nouns, while exceptions require connector words. For example:
+En inglés natural, los adjetivos y otros descriptores suelen aparecer antes de los sustantivos, mientras que las excepciones requieren palabras conectoras. Por ejemplo:
 
-- Coffee _with_ milk
-- Soup _of the_ day
-- Visitor _to the_ museum
+- Café _con_ leche
+- Sopa _del_ día
+- Visitante _del_ museo
 
-You can definitely include these connector words in component names if you'd like, but the order is still important.
+Definitivamente, puedes incluir estas palabras conectoras en los nombres de los componentes si lo deseas, pero el orden sigue siendo importante.
 
-Also note that **what's considered "highest-level" will be contextual to your app**. For example, imagine an app with a search form. It may include components like this one:
+También ten en cuenta que **lo que se considera "el nivel más alto" será contextual a tu aplicación**. Por ejemplo, imagina una aplicación con un formulario de búsqueda. Puedes incluir componentes como este:
 
 ```
 components/
@@ -284,7 +284,7 @@ components/
 |- TermsCheckbox.vue
 ```
 
-As you might notice, it's quite difficult to see which components are specific to the search. Now let's rename the components according to the rule:
+Como puedes notar, es bastante difícil ver qué componentes son específicos de la búsqueda. Ahora cambiemos el nombre de los componentes de acuerdo con la regla:
 
 ```
 components/
@@ -296,13 +296,13 @@ components/
 |- SettingsCheckboxTerms.vue
 ```
 
-Since editors typically organize files alphabetically, all the important relationships between components are now evident at a glance.
+Puesto que los editores normalmente organizan los archivos alfabéticamente, todas las relaciones importantes entre los componentes ahora son evidentes de un vistazo.
 
-You might be tempted to solve this problem differently, nesting all the search components under a "search" directory, then all the settings components under a "settings" directory. We only recommend considering this approach in very large apps (e.g. 100+ components), for these reasons:
+Pudieras verte tentado a resolver este problema de manera diferente, anidando todos los componentes de búsqueda en un directorio de "búsqueda", luego todos los componentes de configuración en un directorio de "configuración". Recomendamos considerar este enfoque solo en aplicaciones muy grandes (por ejemplo, más de 100 componentes), por las siguientes razones:
 
-- It generally takes more time to navigate through nested sub-directories, than scrolling through a single `components` directory.
-- Name conflicts (e.g. multiple `ButtonDelete.vue` components) make it more difficult to quickly navigate to a specific component in a code editor.
-- Refactoring becomes more difficult, because find-and-replace often isn't sufficient to update relative references to a moved component.
+- Por lo general, lleva más tiempo navegar a través de subdirectorios anidados que desplazarse por un solo directorio de "componentes".
+- Los conflictos de nombres (por ejemplo, múltiples componentes `ButtonDelete.vue`) dificultan la navegación rápida a un componente específico en un editor de código.
+- La refactorización se vuelve más difícil, porque buscar y reemplazar a menudo no es suficiente para actualizar las referencias relativas a un componente movido.
   :::
 
 <div class="style-example style-example-bad">
@@ -335,24 +335,24 @@ components/
 
 </div>
 
-## Self-closing components
+## Componentes de cierre automático
 
-**Components with no content should be self-closing in [Single-File Components](/guide/scaling-up/sfc.html), string templates, and [JSX](/guide/extras/render-function.html#jsx-tsx) - but never in DOM templates.**
+**Los componentes sin contenido deben cerrarse automáticamente en [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html), templates de cadena y [JSX](/guide/extras/render-function.html#jsx-tsx), pero nunca en templates del DOM.**
 
-Components that self-close communicate that they not only have no content, but are **meant** to have no content. It's the difference between a blank page in a book and one labeled "This page intentionally left blank." Your code is also cleaner without the unnecessary closing tag.
+Los componentes de cierre automático comunican que no solo no tienen contenido, sino que están **destinados** a no tener contenido. Es la diferencia entre una página en blanco en un libro y una etiquetada como "Esta página se dejó en blanco intencionalmente". Tu código también es más limpio sin la etiqueta de cierre innecesaria.
 
-Unfortunately, HTML doesn't allow custom elements to be self-closing - only [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). That's why the strategy is only possible when Vue's template compiler can reach the template before the DOM, then serve the DOM spec-compliant HTML.
+Desafortunadamente, HTML no permite que los elementos personalizados se cierren automáticamente, solo los [elementos "vacíos" oficiales](https://www.w3.org/TR/html/syntax.html#void-elements). Es por eso que la estrategia solo es posible cuando el compilador de templates de Vue puede alcanzar la template antes del DOM y luego servir el HTML compatible con las especificaciones del DOM.
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>
 
 ```vue-html
-<!-- In Single-File Components, string templates, and JSX -->
+<!-- En Componentes de un Solo Archivo, templates de cadenas y JSX -->
 <MyComponent></MyComponent>
 ```
 
 ```vue-html
-<!-- In DOM templates -->
+<!-- En templates del DOM -->
 <my-component/>
 ```
 
@@ -362,46 +362,46 @@ Unfortunately, HTML doesn't allow custom elements to be self-closing - only [off
 <h3>Correcto</h3>
 
 ```vue-html
-<!-- In Single-File Components, string templates, and JSX -->
+<!-- En Componentes de un Solo Archivo, templates de cadenas y JSX -->
 <MyComponent/>
 ```
 
 ```vue-html
-<!-- In DOM templates -->
+<!-- En templates del DOM -->
 <my-component></my-component>
 ```
 
 </div>
 
-## Component name casing in templates
+## Nombre de componente enmarcados en templates
 
-**In most projects, component names should always be PascalCase in [Single-File Components](/guide/scaling-up/sfc.html) and string templates - but kebab-case in DOM templates.**
+**En la mayoría de los proyectos, los nombres de los componentes siempre deben estar en PascalCase en [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html) y templates de cadenas, pero en kebab-case en las templates del DOM.**
 
-PascalCase has a few advantages over kebab-case:
+PascalCase tiene algunas ventajas sobre kebab-case:
 
-- Editors can autocomplete component names in templates, because PascalCase is also used in JavaScript.
-- `<MyComponent>` is more visually distinct from a single-word HTML element than `<my-component>`, because there are two character differences (the two capitals), rather than just one (a hyphen).
-- If you use any non-Vue custom elements in your templates, such as a web component, PascalCase ensures that your Vue components remain distinctly visible.
+- Los editores pueden autocompletar los nombres de los componentes en las templates, porque PascalCase también se usa en JavaScript.
+- `<MyComponent>` es visualmente más diferente de un elemento HTML de una sola palabra que `<my-component>`, porque hay dos caracteres diferentes (las dos mayúsculas), en lugar de solo uno (el guión).
+- Si usas elementos personalizados que no son de Vue en tus templates, como un componente web, PascalCase garantiza que tus componentes de Vue permanezcan claramente visibles.
 
-Unfortunately, due to HTML's case insensitivity, DOM templates must still use kebab-case.
+Desafortunadamente, debido a la insensibilidad de mayúsculas y minúsculas de HTML, las templates del DOM deben seguir usando kebab-case.
 
-Also note that if you've already invested heavily in kebab-case, consistency with HTML conventions and being able to use the same casing across all your projects may be more important than the advantages listed above. In those cases, **using kebab-case everywhere is also acceptable.**
+También ten en cuenta que si ya has invertido mucho en kebab-case, la coherencia con las convenciones de HTML y poder usar el mismo enmarcado en todos tus proyectos puede ser más importante que las ventajas enumeradas anteriormente. En esos casos, **también es aceptable usar kebab-case en todas partes.**
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>
 
 ```vue-html
-<!-- In Single-File Components and string templates -->
+<!-- En Componentes de un Solo Archivo y templates de cadenas -->
 <mycomponent/>
 ```
 
 ```vue-html
-<!-- In Single-File Components and string templates -->
+<!-- En Componentes de un Solo Archivo y templates de cadenas -->
 <myComponent/>
 ```
 
 ```vue-html
-<!-- In DOM templates -->
+<!-- En templates del DOM -->
 <MyComponent></MyComponent>
 ```
 
@@ -411,19 +411,19 @@ Also note that if you've already invested heavily in kebab-case, consistency wit
 <h3>Correcto</h3>
 
 ```vue-html
-<!-- In Single-File Components and string templates -->
+<!-- En Componentes de un Solo Archivo y templates de cadenas -->
 <MyComponent/>
 ```
 
 ```vue-html
-<!-- In DOM templates -->
+<!-- En templates del DOM -->
 <my-component></my-component>
 ```
 
-OR
+O
 
 ```vue-html
-<!-- Everywhere -->
+<!-- En todas partes -->
 <my-component></my-component>
 ```
 
