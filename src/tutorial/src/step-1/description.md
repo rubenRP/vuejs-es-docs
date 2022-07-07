@@ -17,7 +17,7 @@ Si eres un desarrollador experimentado que viene de Vue 2 u otros frameworks, ha
 <details>
 <summary>Detalles de la configuración del tutorial</summary>
 
-- Vue ofrece dos estilos de API: Option API y Composition API. Este tutorial está diseñado para funcionar con ambos: puedes elegir tu estilo preferido usando los interruptores de **Preferencia de API** en la parte superior. <a target="_blank" href="/guide/introduction.html#api-styles">Obten más información sobre los estilos de API</a>.
+- Vue ofrece dos estilos de API: Options API y Composition API. Este tutorial está diseñado para funcionar con ambos: puedes elegir tu estilo preferido usando los interruptores de **Preferencia de API** en la parte superior. <a target="_blank" href="/guide/introduction.html#api-styles">Obten más información sobre los estilos de API</a>.
 
 - También puedes cambiar entre el modo SFC siglas del inglés de "Componente de un Solo Archivo" o el modo HTML. El primero te mostrará ejemplos de código en <a target="_blank" href="/guide/introduction.html#single-file-components">Componentes de un Solo Archivo</a>, que es lo que la mayoría de los desarrolladores usan cuando utilizan Vue con un paso de compilación. El modo HTML muestra el uso sin un paso de compilación.
 
