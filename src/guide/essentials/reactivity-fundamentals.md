@@ -67,7 +67,7 @@ Cuando accedes a `this.someObject` después de asignarlo, el valor es un proxy r
 
 <div class="composition-api">
 
-Podemos crear un objeto reactivo o un array con la función [`reactive()`](/api/reactive-core.html#reactive):
+Podemos crear un objeto reactivo o un array con la función [`reactive()`](/api/reactivity-core.html#reactive):
 
 ```js
 import { reactive } from 'vue'
