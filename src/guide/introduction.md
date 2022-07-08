@@ -121,11 +121,11 @@ SFC es una característica definitoria de Vue y es la forma recomendada de crear
 
 ## Estilos de API
 
-Los componentes de Vue se pueden crear en dos estilos de API diferentes: **API de opciones** y **API de composición**.
+Los componentes de Vue se pueden crear en dos estilos de API diferentes: **Options API** y **Composition API**.
 
-### API de Opciones
+### Options API
 
-Con la API de opciones, definimos la lógica de un componente usando un objeto de opciones tales como `data`, `methods` y `mounted`. Las propiedades definidas por las opciones se exponen en el `this` dentro de las funciones, el cual apunta a la instancia del componente:
+Con la Options API, definimos la lógica de un componente usando un objeto de opciones tales como `data`, `methods` y `mounted`. Las propiedades definidas por las opciones se exponen en el `this` dentro de las funciones, el cual apunta a la instancia del componente:
 
 ```vue
 <script>
@@ -163,11 +163,11 @@ export default {
 
 [Pruébalo en el Patio de Juego](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPkNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==)
 
-### API de Composición
+### Composition API
 
-Con la API de composición, definimos la lógica de un componente utilizando funciones importadas de la API. En un SFC, la API de composición se usa normalmente con [`<script setup>`](/api/sfc-script-setup). El atributo `setup` es una indicación que hace que Vue realice transformaciones en tiempo de compilación, lo que nos permiten usar la API de composición con menos repeticiones. Por ejemplo, las importaciones y las variables/funciones de nivel superior declaradas en un `<script setup>` se pueden usar directamente en la plantilla.
+Con la Composition API, definimos la lógica de un componente utilizando funciones importadas de la API. En un SFC, la Composition API se usa normalmente con [`<script setup>`](/api/sfc-script-setup). El atributo `setup` es una indicación que hace que Vue realice transformaciones en tiempo de compilación, lo que nos permiten usar la Composition API con menos repeticiones. Por ejemplo, las importaciones y las variables/funciones de nivel superior declaradas en un `<script setup>` se pueden usar directamente en la plantilla.
 
-Aquí está el mismo componente, con exactamente la misma plantilla, pero usando la API de composición y `<script setup>` en su lugar:
+Aquí está el mismo componente, con exactamente la misma plantilla, pero usando la Composition API y `<script setup>` en su lugar:
 
 ```vue
 <script setup>
@@ -196,13 +196,13 @@ onMounted(() => {
 
 ### ¿Cuál elegir?
 
-En primer lugar, ambos estilos de API son totalmente capaces de cubrir casos de uso comunes. Son interfaces diferentes impulsadas por exactamente el mismo sistema subyacente. De hecho, ¡la API de opciones es implementada sobre la API de composición! Los conceptos y conocimientos fundamentales sobre Vue se comparten entre los dos estilos.
+En primer lugar, ambos estilos de API son totalmente capaces de cubrir casos de uso comunes. Son interfaces diferentes impulsadas por exactamente el mismo sistema subyacente. De hecho, ¡la Options API es implementada sobre la Composition API! Los conceptos y conocimientos fundamentales sobre Vue se comparten entre los dos estilos.
 
-La API de opciones se centra en el concepto de una "instancia de componente" (`this` como viste en el ejemplo), que generalmente se alinea mejor con un modelo mental basado en clases para usuarios que provienen de entornos de lenguajes de POO. También es más amigable para principiantes al abstraer los detalles de reactividad y hacer cumplir la organización del código a través de grupos de opciones.
+La Options API se centra en el concepto de una "instancia de componente" (`this` como viste en el ejemplo), que generalmente se alinea mejor con un modelo mental basado en clases para usuarios que provienen de entornos de lenguajes de POO. También es más amigable para principiantes al abstraer los detalles de reactividad y hacer cumplir la organización del código a través de grupos de opciones.
 
-La API de composición se centra en la declaración de variables de estado reactivas directamente en el ámbito de una función y en la composición del estado de múltiples funciones para manejar juntas la complejidad. Tiene una forma más libre y requiere una comprensión de cómo funciona la reactividad en Vue para ser utilizada de manera efectiva. A cambio, su flexibilidad permite patrones más poderosos para organizar y reutilizar la lógica.
+La Composition API se centra en la declaración de variables de estado reactivas directamente en el ámbito de una función y en la composición del estado de múltiples funciones para manejar juntas la complejidad. Tiene una forma más libre y requiere una comprensión de cómo funciona la reactividad en Vue para ser utilizada de manera efectiva. A cambio, su flexibilidad permite patrones más poderosos para organizar y reutilizar la lógica.
 
-Puedes obtener más información sobre la comparación entre los dos estilos y los posibles beneficios de la API de composición en [FAQ sobre la API de Composición](/guide/extras/composition-api-faq).
+Puedes obtener más información sobre la comparación entre los dos estilos y los posibles beneficios de la Composition API en [FAQ sobre la Composition API](/guide/extras/composition-api-faq).
 
 Si eres nuevo en Vue, esta es nuestra recomendación general:
 
@@ -210,9 +210,9 @@ Si eres nuevo en Vue, esta es nuestra recomendación general:
 
 - Para uso en producción:
 
-  - Elije la API de Opciones si no estás utilizando herramientas de compilación o planeas usar Vue principalmente en escenarios de baja complejidad; por ejemplo, para mejoras progresivas.
+  - Elije la Options API si no estás utilizando herramientas de compilación o planeas usar Vue principalmente en escenarios de baja complejidad; por ejemplo, para mejoras progresivas.
 
-  - Elije la API de Composición + Componentes de un Solo Archivo si planeas crear aplicaciones completas con Vue.
+  - Elije la Composition API + Componentes de un Solo Archivo si planeas crear aplicaciones completas con Vue.
 
 No tienes que comprometerte con un solo estilo durante la fase de aprendizaje. El resto de la documentación proporcionará muestras de código en ambos estilos cuando corresponda y puedes alternar entre ellos en cualquier momento usando los **Interruptores de Preferencia de API** en la parte superior de la barra lateral izquierda.
 

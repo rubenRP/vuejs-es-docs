@@ -205,7 +205,7 @@ export const sidebar = {
           link: '/guide/essentials/forms'
         },
         {
-          text: 'Ciclo de Vida de los Hooks',
+          text: 'Hooks del Ciclo de Vida',
           link: '/guide/essentials/lifecycle'
         },
         {
@@ -448,7 +448,7 @@ export const sidebar = {
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Ciclo de Vida de los Hooks',
+          text: 'Hooks del Ciclo de Vida',
           link: '/api/composition-api-lifecycle'
         },
         {
@@ -461,23 +461,23 @@ export const sidebar = {
       text: 'Options API',
       items: [
         {
-          text: 'Opciones: Estado',
+          text: 'Options: Estado',
           link: '/api/options-state'
         },
         {
-          text: 'Opciones: Renderizado',
+          text: 'Options: Renderizado',
           link: '/api/options-rendering'
         },
         {
-          text: 'Opciones: Ciclo de Vida',
+          text: 'Options: Ciclo de Vida',
           link: '/api/options-lifecycle'
         },
         {
-          text: 'Opciones: Composición',
+          text: 'Options: Composición',
           link: '/api/options-composition'
         },
         {
-          text: 'Opciones: Misceláneas',
+          text: 'Options: Misceláneas',
           link: '/api/options-misc'
         },
         {
