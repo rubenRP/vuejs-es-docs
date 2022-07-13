@@ -1,4 +1,4 @@
-# Component Registration
+# Registro de Componentes
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Free Vue.js Component Registration Lesson"/>
 

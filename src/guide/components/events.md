@@ -1,4 +1,4 @@
-# Component Events
+# Eventos de los Componentes
 
 > This page assumes you've already read the [Components Basics](/guide/essentials/component-basics). Read that first if you are new to components.
 
@@ -176,7 +176,7 @@ Although optional, it is recommended to define all emitted events in order to be
 If a native event (e.g., `click`) is defined in the `emits` option, the listener will now only listen to component-emitted `click` events and no longer respond to native `click` events.
 :::
 
-## Events Validation
+## Validación de Eventos
 
 Similar to prop type validation, an emitted event can be validated if it is defined with the object syntax instead of the array syntax.
 
@@ -236,7 +236,7 @@ export default {
 
 </div>
 
-## Usage with `v-model`
+## Uso con `v-model`
 
 Custom events can also be used to create custom inputs that work with `v-model`. Remember that:
 

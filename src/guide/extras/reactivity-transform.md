@@ -1,4 +1,4 @@
-# Reactivity Transform
+# Transformación de la Reactividad
 
 :::warning Experimental Feature
 Reactivity Transform is currently an experimental feature. It is disabled by default and requires [explicit opt-in](#explicit-opt-in). It may also change before being finalized. To stay up-to-date, keep an eye on its [proposal and discussion on GitHub](https://github.com/vuejs/rfcs/discussions/369).

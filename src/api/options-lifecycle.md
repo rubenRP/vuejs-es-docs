@@ -1,4 +1,4 @@
-# Options: Lifecycle
+# Options: Ciclo de Vida
 
 :::info See also
 For shared usage of lifecycle hooks, see [Guide - Lifecycle Hooks](/guide/essentials/lifecycle.html)

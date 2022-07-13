@@ -1,4 +1,4 @@
-# Componentes de un Solo Archivo (Single File Components)
+# Componentes de un Solo Archivo (Single-File Components)
 
 ## Introducción
 

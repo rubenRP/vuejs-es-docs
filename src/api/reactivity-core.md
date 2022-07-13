@@ -1,4 +1,4 @@
-# Reactivity API: Core
+# Reactividad de la API: Core
 
 :::info See also
 To better understand the Reactivity APIs, it is recommended to read the following chapters in the guide:

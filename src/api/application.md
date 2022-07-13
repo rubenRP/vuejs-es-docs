@@ -1,4 +1,4 @@
-# Application API
+# API de la Aplicación
 
 ## createApp()
 

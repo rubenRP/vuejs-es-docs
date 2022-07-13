@@ -83,9 +83,9 @@ props: {
 
 </div>
 
-## Usar key con `v-for`
+## Usar `v-for` con Clave
 
-El uso de `key` con `v-for` _siempre_ es requerido en los componentes para mantener el estado interno del componente en el subárbol. Sin embargo, incluso para los elementos, es una buena práctica mantener un comportamiento predecible, tal como [constancia del objeto](https://bost.ocks.org/mike/constancy/) en las animaciones.
+El uso de `key` con `v-for` _siempre_ es necesaria en los componentes para mantener el estado interno del componente en el subárbol. Sin embargo, incluso para los elementos, es una buena práctica para mantener un comportamiento predecible, tal como la [constancia del objeto](https://bost.ocks.org/mike/constancy/) en las animaciones.
 
 ::: details Explicación detallada
 Digamos que tienes una lista de ToDos:

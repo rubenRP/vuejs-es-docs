@@ -1,4 +1,4 @@
-# TypeScript with Options API
+# TypeScript con la Options API
 
 > This page assumes you've already read the overview on [Using Vue with TypeScript](./overview).
 
@@ -118,7 +118,7 @@ export default defineComponent({
 })
 ```
 
-## Typing Computed Properties
+## Escritura de Propiedades Computadas
 
 A computed property infers its type based on its return value:
 

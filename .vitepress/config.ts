@@ -169,7 +169,7 @@ export const sidebar = {
       text: 'Esenciales',
       items: [
         {
-          text: 'Creando una Aplicación',
+          text: 'Creando una Aplicación Vue',
           link: '/guide/essentials/application'
         },
         {
@@ -185,7 +185,7 @@ export const sidebar = {
           link: '/guide/essentials/computed'
         },
         {
-          text: 'Enlaces de Clase y Estilo',
+          text: 'Vinculación de Clases y Estilos',
           link: '/guide/essentials/class-and-style'
         },
         {
@@ -193,19 +193,19 @@ export const sidebar = {
           link: '/guide/essentials/conditional'
         },
         {
-          text: 'Renderizado de Lista',
+          text: 'Renderizado de Listas',
           link: '/guide/essentials/list'
         },
         {
-          text: 'Manejo de Eventos',
+          text: 'Manejando Eventos',
           link: '/guide/essentials/event-handling'
         },
         {
-          text: 'Enlaces de Formularios',
+          text: 'Enlaces de Entradas de Formularios',
           link: '/guide/essentials/forms'
         },
         {
-          text: 'Ciclo de Vida de los Hooks',
+          text: 'Hooks del Ciclo de Vida',
           link: '/guide/essentials/lifecycle'
         },
         {
@@ -217,7 +217,7 @@ export const sidebar = {
           link: '/guide/essentials/template-refs'
         },
         {
-          text: 'Básicos de Componentes',
+          text: 'Fundamentos de los Componentes',
           link: '/guide/essentials/component-basics'
         }
       ]
@@ -448,7 +448,7 @@ export const sidebar = {
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Ciclo de Vida de los Hooks',
+          text: 'Hooks del Ciclo de Vida',
           link: '/api/composition-api-lifecycle'
         },
         {
@@ -461,23 +461,23 @@ export const sidebar = {
       text: 'Options API',
       items: [
         {
-          text: 'Opciones: Estado',
+          text: 'Options: Estado',
           link: '/api/options-state'
         },
         {
-          text: 'Opciones: Renderizado',
+          text: 'Options: Renderizado',
           link: '/api/options-rendering'
         },
         {
-          text: 'Opciones: Ciclo de Vida',
+          text: 'Options: Ciclo de Vida',
           link: '/api/options-lifecycle'
         },
         {
-          text: 'Opciones: Composición',
+          text: 'Options: Composición',
           link: '/api/options-composition'
         },
         {
-          text: 'Opciones: Misceláneas',
+          text: 'Options: Misceláneas',
           link: '/api/options-misc'
         },
         {
