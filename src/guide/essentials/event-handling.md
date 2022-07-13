@@ -1,4 +1,4 @@
-# Manejando de Eventos
+# Manejando Eventos
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/user-events-in-vue-3" title="Lección gratuita de Eventos de Vue.js"/>
@@ -120,7 +120,7 @@ Un manejador de método recibe automáticamente el objeto Evento nativo del DOM 
 
 <div class="composition-api">
 
-Mira también: [Manejadores de Eventos de Escritura](/guide/typescript/composition-api.html#typing-event-handlers) <sup class="vt-badge ts" />
+Mira también: [Manejadores de Eventos de Escritura](/guide/typescript/composition-api.html#manejadores-de-eventos-de-escritura) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -254,7 +254,7 @@ Para solucionar este problema, Vue proporciona **modificadores de eventos** para
 El orden importa cuando se utilizan modificadores porque el código relevante se genera en el mismo orden. Por lo tanto, el uso de `@click.prevent.self` impedirá **la acción por defecto de los clics en el propio elemento y sus hijos** mientras que `@click.self.prevent` sólo impedirá la acción por defecto de los clics en el propio elemento.
 :::
 
-Los modificadores `.capture`, `.once` y `.passive` reflejan las [opciones del método nativo `addEventListener`](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener#Parameters):
+Los modificadores `.capture`, `.once` y `.passive` reflejan las [opciones del método nativo `addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Parameters):
 
 ```vue-html
 <!-- utiliza el modo de captura al añadir el receptor de eventos -->
@@ -270,7 +270,7 @@ Los modificadores `.capture`, `.once` y `.passive` reflejan las [opciones del m�
 <div @scroll.passive="onScroll">...</div>
 ```
 
-El modificador `.passive` se suele utilizar con los escuchadores de eventos táctiles para [mejorar el rendimiento en los dispositivos móviles](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
+El modificador `.passive` se suele utilizar con los escuchadores de eventos táctiles para [mejorar el rendimiento en los dispositivos móviles](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
 
 ::: tip
 No utilice `.passive` y `.prevent` juntos, porque `.passive` ya le indica al navegador que _no_ pretendes impedir el comportamiento por defecto del evento, y es probable que veas una advertencia del navegador si lo haces.
@@ -285,7 +285,7 @@ Cuando escuchamos eventos de teclado, a menudo necesitamos comprobar teclas espe
 <input @keyup.enter="submit" />
 ```
 
-Puedes utilizar directamente cualquier nombre de tecla válido expuesto a través de [`KeyboardEvent.key`](https://developer.mozilla.org/es/docs/Web/API/KeyboardEvent/key/Key_Values) como modificadores convirtiéndolos en kebab-case.
+Puedes utilizar directamente cualquier nombre de tecla válido expuesto a través de [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) como modificadores convirtiéndolos en kebab-case.
 
 ```vue-html
 <input @keyup.page-down="onPageDown" />

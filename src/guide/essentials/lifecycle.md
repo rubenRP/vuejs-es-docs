@@ -57,7 +57,7 @@ Ten en cuenta que esto no significa que la llamada deba colocarse léxicamente d
 
 ## Diagrama del Ciclo de Vida
 
-A continuación se muestra un diagrama del ciclo de vida de la instancia. No necesitas comprender completamente todo lo que sucede en este momento, pero a medida que aprenda y construya más, será una referencia útil.
+A continuación se muestra un diagrama del ciclo de vida de la instancia. En este momento no es necesario que entiendas completamente todo lo que sucede, pero a medida que aprendas y construyas más, será una referencia útil.
 
 ![Component lifecycle diagram](./images/lifecycle.png)
 

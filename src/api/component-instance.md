@@ -1,4 +1,4 @@
-# Component Instance
+# Instancia del Componente
 
 :::info
 This page documents the built-in properties and methods exposed on the component public instance, i.e. `this`.
@@ -315,7 +315,9 @@ Instance-bound version of the global [`nextTick()`](./general.html#nexttick).
 
   ```ts
   interface ComponentPublicInstance {
-    $nextTick(callback?: (this: ComponentPublicInstance) => void): Promise<void>
+    $nextTick(
+      callback?: (this: ComponentPublicInstance) => void
+    ): Promise<void>
   }
   ```
 

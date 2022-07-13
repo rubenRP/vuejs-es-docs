@@ -1,4 +1,4 @@
-# Built-in Directives
+# Directivas Integradas
 
 ## v-text
 
@@ -325,7 +325,7 @@ Dynamically bind one or more attributes, or a component prop to an expression.
   <div :someProperty.prop="someObject"></div>
   <!-- equivalent to -->
   <div .someProperty="someObject"></div>
-  
+
   <div :someProperty.attr="someString"></div>
   <!-- equivalent to -->
   <div ^someProperty="someString"></div>

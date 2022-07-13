@@ -6,7 +6,7 @@ footer: false
 
 :::info ¡Estás leyendo la documentación de Vue 3!
 
-- La documentación de Vue 2 documentation se ha movido a [v2.vuejs.org](https://v2.vuejs.org/).
+- La documentación de Vue 2 se ha movido a [v2.vuejs.org](https://v2.vuejs.org/).
 - ¿Actualizando desde Vue 2? Consulta la [Guía de Migración](https://v3-migration.vuejs.org/).
   :::
 
@@ -44,7 +44,7 @@ createApp({
 ```vue-html
 <div id="app">
   <button @click="count++">
-    El Contador está en: {{ count }}
+    El contador está en: {{ count }}
   </button>
 </div>
 ```
@@ -58,13 +58,13 @@ const count = ref(0)
 
 <div class="demo">
   <button @click="count++">
-    El Contador está en: {{ count }}
+    El contador está en: {{ count }}
   </button>
 </div>
 
 El ejemplo anterior demuestra las dos características principales de Vue:
 
-- **El Renderizado Declarativo**: Vue amplía el HTML estándar con una sintaxis de plantilla que nos permite describir de forma declarativa la salida HTML en función al estado de JavaScript.
+- **El Renderizado Declarativo**: Vue amplía el HTML estándar con una sintaxis de plantilla (template) que nos permite describir de forma declarativa la salida HTML en función al estado de JavaScript.
 
 - **Reactividad**: Vue rastrea automáticamente los cambios de estado de JavaScript y actualiza de manera eficiente el DOM cuando ocurren cambios.
 
@@ -87,13 +87,13 @@ Vue es un framework y un ecosistema que cubre la mayoría de las característica
 
 Si encuentras estos conceptos intimidantes, ¡no te preocupes! El tutorial y la guía solo requieren conocimientos básicos de HTML y JavaScript, y deberías poder seguirlos sin ser un experto en ninguno de estos.
 
-Si eres un desarrollador experimentado interesado en cómo integrar mejor Vue a tu stack, o tienes curiosidad acerca de lo que significan estos términos, los discutimos con más detalle en [Maneras de Usar Vue](/guide/extras/ways-of- usando-vue).
+Si eres un desarrollador experimentado interesado en cómo integrar mejor Vue a tu stack, o tienes curiosidad acerca de lo que significan estos términos, los discutimos con más detalle en [Maneras de Usar Vue](/guide/extras/ways-of-using-vue).
 
 A pesar de su flexibilidad, el conocimiento central sobre cómo funciona Vue se comparte en todos estos casos de uso. Incluso si ahora eres solo un principiante, el conocimiento adquirido en el camino seguirá siendo útil a medida que crezcas para abordar metas más ambiciosas en el futuro. Si eres un veterano, puedes elegir la forma óptima de aprovechar Vue en función de los problemas que estás tratando de resolver mientras mantienes la misma productividad. Es por eso que llamamos a Vue "El Framework Progresivo": es un framework que puede crecer contigo y adaptarse a tus necesidades.
 
 ## Componentes de un Solo Archivo (Single-File Components)
 
-En la mayoría de los proyectos de Vue habilitados para herramientas de compilación, creamos componentes de Vue utilizando un formato de archivo similar a HTML llamado **Componente de un Solo Archivo** (también conocido como archivos `*.vue`, abreviado como **SFC**). Un SFC de Vue, como sugiere el nombre, encapsula la lógica del componente (JavaScript), la plantilla (HTML) y los estilos (CSS) en un solo archivo. Aquí está el ejemplo anterior, escrito en formato SFC:
+En la mayoría de los proyectos de Vue habilitados para herramientas de compilación, creamos componentes de Vue utilizando un formato de archivo similar a HTML llamado **Componente de un Solo Archivo** (también conocido como archivos `*.vue`, abreviado como **SFC**). Un SFC de Vue, como sugiere el nombre, encapsula la lógica del componente (JavaScript), la template (HTML) y los estilos (CSS) en un solo archivo. Aquí está el ejemplo anterior, escrito en formato SFC:
 
 ```vue
 <script>
@@ -107,7 +107,7 @@ export default {
 </script>
 
 <template>
-  <button @click="count++">Count is: {{ count }}</button>
+  <button @click="count++">El contador está en: {{ count }}</button>
 </template>
 
 <style scoped>
@@ -140,7 +140,7 @@ export default {
 
   // Los métodos son funciones que mutan el estado y disparan
   // actualizaciones. Estos pueden ser ligados como eventos de
-  // escucha en las plantillas.
+  // escucha en las templates.
   methods: {
     increment() {
       this.count++
@@ -161,13 +161,13 @@ export default {
 </template>
 ```
 
-[Pruébalo en el Patio de Juego](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPkNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==)
+[Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPkNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==)
 
 ### Composition API
 
-Con la Composition API, definimos la lógica de un componente utilizando funciones importadas de la API. En un SFC, la Composition API se usa normalmente con [`<script setup>`](/api/sfc-script-setup). El atributo `setup` es una indicación que hace que Vue realice transformaciones en tiempo de compilación, lo que nos permiten usar la Composition API con menos repeticiones. Por ejemplo, las importaciones y las variables/funciones de nivel superior declaradas en un `<script setup>` se pueden usar directamente en la plantilla.
+Con la Composition API, definimos la lógica de un componente utilizando funciones importadas de la API. En un SFC, la Composition API se usa normalmente con [`<script setup>`](/api/sfc-script-setup). El atributo `setup` es una indicación que hace que Vue realice transformaciones en tiempo de compilación, lo que nos permiten usar la Composition API con menos repeticiones. Por ejemplo, las importaciones y las variables/funciones de nivel superior declaradas en un `<script setup>` se pueden usar directamente en la template.
 
-Aquí está el mismo componente, con exactamente la misma plantilla, pero usando la Composition API y `<script setup>` en su lugar:
+Aquí está el mismo componente, con exactamente la misma template, pero usando la Composition API y `<script setup>` en su lugar:
 
 ```vue
 <script setup>
@@ -192,7 +192,7 @@ onMounted(() => {
 </template>
 ```
 
-[Pruébalo en el Patio de Juego](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG4vLyByZWFjdGl2ZSBzdGF0ZVxuY29uc3QgY291bnQgPSByZWYoMClcblxuLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbmZ1bmN0aW9uIGluY3JlbWVudCgpIHtcbiAgY291bnQudmFsdWUrK1xufVxuXG4vLyBsaWZlY3ljbGUgaG9va3Ncbm9uTW91bnRlZCgoKSA9PiB7XG4gIGNvbnNvbGUubG9nKGBUaGUgaW5pdGlhbCBjb3VudCBpcyAke2NvdW50LnZhbHVlfS5gKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxidXR0b24gQGNsaWNrPVwiaW5jcmVtZW50XCI+Q291bnQgaXM6IHt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiJ9)
+[Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG4vLyByZWFjdGl2ZSBzdGF0ZVxuY29uc3QgY291bnQgPSByZWYoMClcblxuLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbmZ1bmN0aW9uIGluY3JlbWVudCgpIHtcbiAgY291bnQudmFsdWUrK1xufVxuXG4vLyBsaWZlY3ljbGUgaG9va3Ncbm9uTW91bnRlZCgoKSA9PiB7XG4gIGNvbnNvbGUubG9nKGBUaGUgaW5pdGlhbCBjb3VudCBpcyAke2NvdW50LnZhbHVlfS5gKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxidXR0b24gQGNsaWNrPVwiaW5jcmVtZW50XCI+Q291bnQgaXM6IHt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiJ9)
 
 ### ¿Cuál elegir?
 
@@ -214,7 +214,7 @@ Si eres nuevo en Vue, esta es nuestra recomendación general:
 
   - Elije la Composition API + Componentes de un Solo Archivo si planeas crear aplicaciones completas con Vue.
 
-No tienes que comprometerte con un solo estilo durante la fase de aprendizaje. El resto de la documentación proporcionará muestras de código en ambos estilos cuando corresponda y puedes alternar entre ellos en cualquier momento usando los **Interruptores de Preferencia de API** en la parte superior de la barra lateral izquierda.
+No tienes que comprometerte con un solo estilo durante la fase de aprendizaje. El resto de la documentación proporcionará muestras de código en ambos estilos cuando corresponda y puedes alternar entre ellos en cualquier momento usando el interruptor de **Preferencia de API** en la parte superior de la barra lateral izquierda.
 
 ## ¿Aún tienes preguntas?
 

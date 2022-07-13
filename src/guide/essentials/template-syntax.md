@@ -74,7 +74,7 @@ Los [atributos booleanos](https://html.spec.whatwg.org/multipage/common-microsyn
 <button :disabled="isButtonDisabled">Button</button>
 ```
 
-El atributo `disabled` se incluirá si `isButtonDisabled` tiene un [valor verdadero (thruty)](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). También se incluirá si el valor es una cadena vacía, manteniendo la coherencia con `<button disabled="">`. Para otros valores falsos, se omitirá el atributo.
+El atributo `disabled` se incluirá si `isButtonDisabled` tiene un [valor verdadero (thruty)](https://developer.mozilla.org/es/docs/Glossary/Truthy). También se incluirá si el valor es una cadena vacía, manteniendo la coherencia con `<button disabled="">`. Para otros valores falsos, se omitirá el atributo.
 
 ### Vinculación Dinámica de Múltiples Atributos
 
@@ -261,7 +261,7 @@ Los modificadores son sufijos especiales indicados por un punto, que indican que
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling.html#event-modifiers) y [para `v-model`](./forms.html#modifiers), cuando exploremos esas características.
+Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling.html#modificadores-de-eventos) y [para `v-model`](./forms.html#modificadores), cuando exploremos esas características.
 
 Y finalmente, aquí está la sintaxis completa de la directiva:
 

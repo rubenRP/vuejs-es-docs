@@ -77,7 +77,7 @@ const state = reactive({ count: 0 })
 
 Los objetos reactivos son [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue puede rastrear el acceso a la propiedad y las mutaciones de un objeto reactivo. Si tienes curiosidad acerca de los detalles, explicamos cómo funciona el sistema de reactividad de Vue en [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html), pero recomendamos leerlo después de que hayas terminado la guía principal.
 
-Consulta también: [Escritura Reactiva](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
+Consulta también: [Escritura de reactive()](/guide/typescript/composition-api.html#escritura-de-reactive) <sup class="vt-badge ts" />
 
 Para usar el estado reactivo en la template de un componente, decláralos y devuélvelos desde la función `setup()` del componente:
 
@@ -165,7 +165,7 @@ Las importaciones de nivel superior y las variables declaradas en el `<script se
 
 ## Declarando Métodos \*
 
-<VueSchoolLink href="https://vueschool.io/lessons/methods-in-vue-3" title="Free Vue.js Methods Lesson"/>
+<VueSchoolLink href="https://vueschool.io/lessons/methods-in-vue-3" title="Lección gratuita de Métodos de Vue.js"/>
 
 Para agregar métodos a una instancia del componente, usamos la opción `methods`. Este debería ser un objeto que contenga los métodos deseados:
 
@@ -395,7 +395,7 @@ count.value++
 console.log(count.value) // 1
 ```
 
-Consulta también: [Escritura de ref()](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
+Consulta también: [Escritura de ref()](/guide/typescript/composition-api.html#escritura-de-ref) <sup class="vt-badge ts" />
 
 De forma similar a las propiedades de un objeto reactivo, la propiedad `.value` de un ref es reactiva. Además, cuando contiene tipos de objetos, ref convierte automáticamente su `.value` con `reactive()`.
 
@@ -425,7 +425,7 @@ callSomeFunction(obj.foo)
 const { foo, bar } = obj
 ```
 
-En otras palabras, `ref()` nos permite crear una "referencia" a cualquier valor y pasarla sin perder reactividad. Esta capacidad es bastante importante ya que se usa con frecuencia al extraer lógica en [Funciones composables](/guide/reusability/composables.html).
+En otras palabras, `ref()` nos permite crear una "referencia" a cualquier valor y pasarla sin perder reactividad. Esta capacidad es bastante importante ya que se usa con frecuencia al extraer lógica en [Funciones Composables](/guide/reusability/composables.html).
 
 ### Desempaquetando Ref en Templates \*\*
 

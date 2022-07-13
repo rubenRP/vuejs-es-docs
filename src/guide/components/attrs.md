@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Fallthrough Attributes
+# Atributos no Props
 
 > This page assumes you've already read the [Components Basics](/guide/essentials/component-basics). Read that first if you are new to components.
 

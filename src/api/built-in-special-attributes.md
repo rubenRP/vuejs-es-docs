@@ -1,4 +1,4 @@
-# Built-in Special Attributes
+# Atributos Especiales Integrados
 
 ## key
 

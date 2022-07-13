@@ -19,7 +19,7 @@ Puedes probar Vue con SFC en línea en [StackBlitz](https://vite.new/vue). Stack
 :::tip Prerrequisitos
 
 - Familiaridad con la línea de comandos.
-- Instalar [Node.js](https://nodejs.org/)
+- Instalar [Node.js](https://nodejs.org/es)
   :::
 
 Para crear un proyecto Vue habilitado para herramientas de compilación en tu máquina, ejecuta el siguiente comando en tu terminal (sin el signo `>`):
@@ -62,7 +62,7 @@ Cuando estés listo para enviar tu aplicación a producción, ejecuta lo siguien
 
 Esto creará una compilación de tu aplicación lista para producción en el directorio `./dist` del proyecto. Consulta la [Guía de Implementación de Producción](/guide/best-practices/production-deployment.html) para obtener más información sobre cómo enviar tu aplicación a producción.
 
-[Próximos Pasos >](#next-steps)
+[Próximos Pasos >](#proximos-pasos)
 
 ## Sin Herramientas de Empaquetado
 
@@ -86,7 +86,7 @@ Para comenzar con Vue sin un paso de compilación, simplemente copia el siguient
 
 El ejemplo anterior usa la compilación global de Vue donde todas las API están expuestas bajo la variable global `Vue`.
 
-Si bien la compilación global funciona, usaremos principalmente la sintaxis de [módulos ES](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) en el resto de la documentación para mantener la coherencia. Para usar Vue sobre módulos ES nativos, usa el siguiente HTML en lugar del anterior:
+Si bien la compilación global funciona, usaremos principalmente la sintaxis de [módulos ES](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules) en el resto de la documentación para mantener la coherencia. Para usar Vue sobre módulos ES nativos, usa el siguiente HTML en lugar del anterior:
 
 ```html
 <script type="importmap">
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-Para que esto funcione, debe servir tu HTML sobre el protocolo `http://` en lugar del protocolo `file://`. Para iniciar un servidor HTTP local, primero instala [Node.js](https://nodejs.org/en/), y luego ejecuta `npx serve` desde la línea de comandos en el mismo directorio donde se encuentra tu archivo HTML. Puedes usar también cualquier otro servidor HTTP que pueda servir archivos estáticos con los tipos MIME correctos.
+Para que esto funcione, debe servir tu HTML sobre el protocolo `http://` en lugar del protocolo `file://`. Para iniciar un servidor HTTP local, primero instala [Node.js](https://nodejs.org/es/), y luego ejecuta `npx serve` desde la línea de comandos en el mismo directorio donde se encuentra tu archivo HTML. Puedes usar también cualquier otro servidor HTTP que pueda servir archivos estáticos con los tipos MIME correctos.
 
 Es posible que hayas notado que la template del componente importado está integrada como un string de JavaScript. Si estás utilizando VSCode, puedes instalar la extensión [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) y prefijar las cadenas con un comentario `/*html*/` para que sea resaltada la sintaxis de los mismos.
 

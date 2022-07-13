@@ -1,10 +1,10 @@
-# TypeScript with Composition API
+# TypeScript con la Composition API
 
 > This page assumes you've already read the overview on [Using Vue with TypeScript](./overview).
 
-## Typing Component Props
+## Escritura de las Props de Componentes
 
-### Using `<script setup>`
+### Usando `<script setup>`
 
 When using `<script setup>`, the `defineProps()` macro supports inferring the props types based on its argument:
 
@@ -57,13 +57,17 @@ In order to generate the correct runtime code, the generic argument for `defineP
 - An object literal type:
 
   ```ts
-  defineProps<{ /*... */ }>()
+  defineProps<{
+    /*... */
+  }>()
   ```
 
 - A reference to an interface or object literal type **in the same file**:
 
   ```ts
-  interface Props {/* ... */}
+  interface Props {
+    /* ... */
+  }
 
   defineProps<Props>()
   ```
@@ -115,7 +119,7 @@ export default defineComponent({
 })
 ```
 
-## Typing Component Emits
+## Escritura de Emits del Componente
 
 In `<script setup>`, the `emit` function can also be typed using either runtime declaration OR type declaration:
 
@@ -147,7 +151,7 @@ export default defineComponent({
 })
 ```
 
-## Typing `ref()`
+## Escritura de `ref()`
 
 Refs infer the type from the initial value:
 
@@ -187,7 +191,7 @@ If you specify a generic type argument but omit the initial value, the resulting
 const n = ref<number>()
 ```
 
-## Typing `reactive()`
+## Escritura de `reactive()`
 
 `reactive()` also implicitly infers the type from its argument:
 
@@ -215,7 +219,7 @@ const book: Book = reactive({ title: 'Vue 3 Guide' })
 It's not recommended to use the generic argument of `reactive()` because the returned type, which handles nested ref unwrapping, is different from the generic argument type.
 :::
 
-## Typing `computed()`
+## Escritura de `computed()`
 
 `computed()` infers its type based on the getter's return value:
 
@@ -239,7 +243,7 @@ const double = computed<number>(() => {
 })
 ```
 
-## Typing Event Handlers
+## Manejadores de Eventos de Escritura
 
 When dealing with native DOM events, it might be useful to type the argument we pass to the handler correctly. Let's take a look at this example:
 
@@ -300,9 +304,9 @@ If you are sure that the value is always provided, you can also force cast the v
 const foo = inject('foo') as string
 ```
 
-## Typing Template Refs
+## Escritura de Refs de la Template
 
-Template refs should be created with an explicit generic type argument and an initial value of `null`:
+Las refs de las templates deben ser creadas con un argumento de tipo genérico explícito y un valor inicial de `null`:
 
 ```vue
 <script setup lang="ts">
@@ -322,7 +326,7 @@ onMounted(() => {
 
 Note that for strict type safety, it is necessary to use optional chaining or type guards when accessing `el.value`. This is because the initial ref value is `null` until the component is mounted, and it can also be set to `null` if the referenced element is unmounted by `v-if`.
 
-## Typing Component Template Refs
+## Escritura de Refs de la Template del Componente
 
 Sometimes you might need to annotate a template ref for a child component in order to call its public method. For example, we have a `MyModal` child component with a method that opens the modal:
 
